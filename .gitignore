@@ -1,95 +1,103 @@
-# ============================================
-# ELEC5305 Non-Speech Sound Recognition Project
-# Comprehensive .gitignore for MATLAB + macOS
-# ============================================
+########################
+# OS & IDE IGNORE
+########################
 
-###############
-# 1) DATASETS #
-###############
-
-# Entire ESC-50 dataset (DO NOT upload large datasets to GitHub)
-data/ESC-50/
-ESC-50/
-*/ESC-50/
-
-# Ignore all audio files
-*.wav
-*.mp3
-*.flac
-*.aiff
-*.m4a
-*.ogg
-
-
-#############################
-# 2) MATLAB Backup & Cache  #
-#############################
-
-# Autosave files
-*.asv
-
-# MATLAB temporary files
-*.mat
-*.mex*
-
-# Simulink autosave
-*.mdl.autosave
-*.slx.autosave
-
-# MATLAB codegen output folders
-codegen/
-slprj/
-
-
-#########################
-# 3) macOS System Files #
-#########################
-
+# macOS system files
 .DS_Store
 .AppleDouble
 .LSOverride
 Icon?
-._*
 
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
 
-#############################
-# 4) Logs & Temp Documents #
-#############################
+# VSCode
+.vscode/
+*.code-workspace
 
+# Other editors
+.idea/
+*.swp
+*.swo
+
+########################
+# MATLAB IGNORE
+########################
+
+# MATLAB cache and autosaves
+*.asv
+*.autosave
+*.m~
+*.mlx.autosave
+
+# MATLAB project folders
+slprj/
+sccprj/
+codegen/
+
+# Simulink caches
+*.slxc
+*.slx.autosave
+
+########################
+# TRAINING DATASETS
+########################
+
+# ESC-50 dataset
+data/ESC-50/
+
+# UrbanSound8K dataset
+data/urbansound8k/
+data/UrbanSound8K/
+
+# FSD50K dataset
+data/FSD50K/
+
+########################
+# GENERATED MEL-SPECTROGRAMS
+########################
+
+# Cache folders (very large)
+data/melspec_all/
+data/melspec_combined/
+data/melspec_combined_cnn/
+data/melspec_temp/
+
+# Any folder starting with "melspec"
+data/melspec_*/
+
+########################
+# GENERATED MODELS
+########################
+
+# Do NOT ignore model files
+# (so we COMMENT OUT the previous rule)
+# models/*.mat
+
+########################
+# LOGS / RESULTS
+########################
+
+results/*.png
+results/*.mat
+results/*.txt
+
+########################
+# ARCHIVES
+########################
+
+*.zip
+*.tar
+*.tar.gz
+
+########################
+# TEMP FILES
+########################
+
+tmp/
+temp/
 *.log
-*.tmp
 *.bak
 *.old
-
-
-#################################
-# 5) Python / VSCode (Optional) #
-#################################
-
-__pycache__/
-*.pyc
-.vscode/
-.env
-.ipynb_checkpoints/
-
-
-##################
-# 6) Build Files #
-##################
-
-/build/
-/dist/
-*.o
-*.obj
-*.exe
-*.dll
-
-
-###########################
-# 7) Project Result Files #
-###########################
-
-results/
-output/
-plots/
-figures/
